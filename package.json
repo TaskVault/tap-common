@@ -1,5 +1,5 @@
 {
-  "name": "tonads-common",
+  "name": "common",
   "description": "A common package for Typescript project",
   "version": "0.1.0",
   "private": true,
@@ -7,13 +7,29 @@
     "url": "https://github.com/TonAds/tonads-common",
     "type": "git"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./src/index.ts"
+    }
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "src/index.ts",
   "scripts": {
-    "build": "tsc -b",
-    "watch": "tsc -b -w",
+    "build": "rm -rf dist && swc src --out-dir dist --strip-leading-paths",
     "prettify": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint": "eslint"
   },
   "devDependencies": {
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "^1.5.7",
+    "common": "workspace:*",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.25.2",
