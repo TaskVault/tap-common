@@ -24,21 +24,27 @@
   "scripts": {
     "build": "rm -rf dist && swc src --out-dir dist --strip-leading-paths",
     "prettify": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@swc/cli": "^0.3.12",
     "@swc/core": "^1.5.7",
+    "@types/lodash": "^4.17.4",
     "common": "workspace:*",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
-    "eslint-plugin-promise": "^6.0.0"
+    "eslint-plugin-promise": "^6.0.0",
+    "vitest": "^1.6.0"
   },
   "packageManager": "pnpm@9.1.4",
   "engines": {
     "node": "20.11.0",
     "pnpm": "9.1.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
