@@ -35,15 +35,21 @@ export type PaginatedResponse<T> = {
   totalPages: number
 } & T
 
-export type FetchChannelsRequest = PaginatedRequest<{
-  userId?: number
-}>
+export type ForUser<T = {}> = {
+  userId: number
+} & T
 
-export type FetchCampaignsRequest = PaginatedRequest<{
-  userId?: number
-  page: number
-  limit: number
-}>
+export type FetchChannelsRequest = PaginatedRequest<ForUser>
+
+export type FetchCampaignsRequest = PaginatedRequest<ForUser>
+
+export type MatchChannelsRequest = {
+  campaignId: number
+}
+
+export type MatchCampaignsRequest = {
+  channelId: number
+}
 
 export type ChannelsResponse = PaginatedResponse<{
   channels: ChannelResponse[]
@@ -55,20 +61,6 @@ export type CampaignsResponse = PaginatedResponse<{
 
 export type CreateChannelRequest = {
   telegramLink: string
-}
-
-export type CreateCampaignRequest = {
-  name: string
-  description: string
-  targetAudience: string
-}
-
-export type MatchChannelsRequest = {
-  campaignId: number
-}
-
-export type MatchChannelsResponse = {
-  channels: ChannelResponse[]
 }
 
 export type SendOffersRequest = {
@@ -85,9 +77,11 @@ export type ChannelResponse = {
   id: number
   owner: UserResponse
   name: string
+  toneOfVoice?: string
   description?: string
   status: ChannelStatus
   tags: string[]
+  channelSubject: string
 }
 
 export type CampaignResponse = {
@@ -95,10 +89,16 @@ export type CampaignResponse = {
   owner: UserResponse
   name: string
   description: string
+  ad_subject?: string
+  toneOfVoice?: string
   status: AdStatus
   targetAudience: string
+  dateCreated: string
   tags: string[]
+  photos: string[]
 }
+
+export type CreateCampaignRequest = Omit<CampaignResponse, 'id' | 'owner' | 'status' | 'dateCreated'>
 
 export type UserResponse = {
   id: number

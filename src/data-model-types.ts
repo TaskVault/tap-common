@@ -21,11 +21,11 @@ export enum AvgPostViewsTimeRangeType {
 
 export type AvgPostViewsTimeRange = `${AvgPostViewsTimeRangeType}`
 
-export enum CurrenciesType {
+export enum CurrencyType {
   ton = 'ton',
 }
 
-export type Currency = `${CurrenciesType}`
+export type Currency = `${CurrencyType}`
 
 // probably don't wanna publish instantly. click to confirm
 export enum ChannelStatusType {
