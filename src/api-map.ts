@@ -12,13 +12,7 @@ import {
   isSendOffersResponse,
 } from './api-validators.js'
 
-type ApiEndpointSpec = {
-  requestValidator: (obj: any) => boolean
-  responseValidator: (obj: any) => boolean
-  method: 'GET' | 'POST'
-}
-
-export const apiMap: Record<string, ApiEndpointSpec> = {
+export const apiMap = {
   '/api/channels': {
     requestValidator: isFetchChannelsRequest,
     responseValidator: isChannelsResponse,
@@ -49,4 +43,4 @@ export const apiMap: Record<string, ApiEndpointSpec> = {
     responseValidator: isSendOffersResponse,
     method: 'POST',
   },
-}
+} as const
