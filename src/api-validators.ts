@@ -7,7 +7,7 @@ import {
   ForUser, MatchCampaignsRequest, MatchChannelsRequest,
   PaginatedRequest,
   PaginatedResponse, SendOffersRequest, SendOffersResponse, UserResponse,
-} from './api-endpionts-types.js'
+} from './api-endpoints-types.js'
 
 export function isPaginatedRequest<T extends object = {}>(obj: any): obj is PaginatedRequest<T> {
   return typeof obj === 'object' &&

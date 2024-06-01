@@ -7,7 +7,7 @@ import {
   ForUser, MatchCampaignsRequest, MatchChannelsRequest,
   PaginatedRequest,
   PaginatedResponse, SendOffersRequest, SendOffersResponse, UserResponse,
-} from './api-endpionts-types.js'
+} from './api-endpoints-types.js'
 
 export const mockPaginatedRequest: PaginatedRequest<{ extraField: string }> = {
   page: 1,
