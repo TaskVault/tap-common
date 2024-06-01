@@ -14,4 +14,3 @@ export const arrayToIdMap = <T extends WithId>(arr: T[]): IdMap<T> =>
 
 export const entries = <T extends object>(obj: T | null | undefined): AsArray<T> =>
   obj ? (Object.entries(obj) as AsArray<T>) : []
-

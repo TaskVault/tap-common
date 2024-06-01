@@ -34,4 +34,3 @@ export enum ChannelStatusType {
 }
 
 export type ChannelStatus = `${ChannelStatusType}`
-

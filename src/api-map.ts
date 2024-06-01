@@ -1,4 +1,16 @@
-import { isCampaignResponse, isCampaignsResponse, isChannelResponse, isChannelsResponse, isCreateCampaignRequest, isCreateChannelRequest, isFetchCampaignsRequest, isFetchChannelsRequest, isMatchChannelsRequest, isSendOffersRequest, isSendOffersResponse } from "./api-validators.js";
+import {
+  isCampaignResponse,
+  isCampaignsResponse,
+  isChannelResponse,
+  isChannelsResponse,
+  isCreateCampaignRequest,
+  isCreateChannelRequest,
+  isFetchCampaignsRequest,
+  isFetchChannelsRequest,
+  isMatchChannelsRequest,
+  isSendOffersRequest,
+  isSendOffersResponse,
+} from './api-validators.js'
 
 export const apiMap = {
   '/api/channels': {
@@ -25,5 +37,4 @@ export const apiMap = {
     requestValidator: isSendOffersRequest,
     responseValidator: isSendOffersResponse,
   },
-};
-
+}
